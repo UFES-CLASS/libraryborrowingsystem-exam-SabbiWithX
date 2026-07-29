@@ -11,11 +11,19 @@ package com.fad.LibrarySystem.controller;
 
 import com.fad.LibrarySystem.model.Book;
 import com.fad.LibrarySystem.model.LibraryService;
+
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
-import javafx.scene.control.*;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonBar;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.Dialog;
+import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 
 /**
@@ -103,7 +111,7 @@ public class BookFXController {
     public void initialize() {
         colBookId.setCellValueFactory(d -> new SimpleStringProperty(d.getValue().getBookId()));
         colTitle .setCellValueFactory(d -> new SimpleStringProperty(d.getValue().getTitle()));
-        colAuthor.setCellValueFactory(d -> new SimpleStringProperty(d.getValue().author));
+        colAuthor.setCellValueFactory(d -> new SimpleStringProperty(d.getValue().getAuthor()));
         colGenre .setCellValueFactory(d -> new SimpleStringProperty(d.getValue().getGenre()));
         // Status has no direct getter, so we convert the boolean isAvailable() to a label
         colStatus.setCellValueFactory(d ->
